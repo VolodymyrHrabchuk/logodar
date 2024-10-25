@@ -1,16 +1,5 @@
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,11 +8,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang='en'>
+      <body className='font-inter font-normal'>
+        <div className='relative min-h-screen bg-gray-100 overflow-hidden'>
+          {/* Blurred Circle Background */}
+          <div
+            className='absolute -top-[700px] right-0 w-[1241px] h-[1241px] bg-[#F6ECD7] rounded-full blur-3xl'
+            style={{ transform: "translateX(30%)" }}
+          ></div>
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
