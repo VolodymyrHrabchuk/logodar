@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,11 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className='font-inter font-normal'>
+      <body className=' font-roboto'>
         <div className='relative min-h-screen bg-gray-100 overflow-hidden'>
           {/* Blurred Circle Background */}
           <div
-            className='absolute -top-[700px] right-0 w-[1241px] h-[1241px] bg-[#F6ECD7] rounded-full blur-3xl'
+            className='absolute -top-[700px] right-0 w-[1241px] h-[1241px] bg-circle rounded-full blur-3xl'
             style={{ transform: "translateX(30%)" }}
           ></div>
           <Navbar />

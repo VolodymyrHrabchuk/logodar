@@ -19,27 +19,27 @@ export default function Navbar() {
       </div>
 
       {/* Navigation Links */}
-      <div className='hidden lg:flex space-x-14 text-gray-700'>
-        <Link href='/' className='hover:text-gray-900 transition'>
-          Home
+      <div className='hidden lg:flex space-x-14 text-grey'>
+        <Link href='/' className='hover:text-black transition'>
+          Про Тетяну
         </Link>
-        <Link href='/pages' className='hover:text-gray-900 transition'>
-          Pages
+        <Link href='/pages' className='hover:text-black transition'>
+          Блог
         </Link>
-        <Link href='/services' className='hover:text-gray-900 transition'>
-          Services
+        <Link href='/services' className='hover:text-black transition'>
+          Консультації
         </Link>
-        <Link href='/blog' className='hover:text-gray-900 transition'>
-          Blog
+        <Link href='/blog' className='hover:text-black transition'>
+          Каталог спеціалістів
         </Link>
       </div>
 
       {/* Action Buttons */}
       <div className='flex items-center space-x-4'>
-        <button className='hidden lg:inline-block border-2 text-md border-orange text-black px-6 py-2 rounded-md hover:bg-orange hover:text-white transition'>
-          MAKE APPOINTMENT
+        <button className='hidden lg:inline-block border-2 text-md border-orange text-black px-6 py-2 rounded-md hover:bg-orange hover:text-white text-base transition'>
+          Записатися на консультацію{" "}
         </button>
-        <button className='text-gray-700 hover:text-gray-900 transition'>
+        <button className='text-grey hover:text-black transition'>
           <FaSearch size={16} />
         </button>
       </div>
