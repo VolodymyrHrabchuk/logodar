@@ -34,7 +34,7 @@ const socialMediaData = [
 
 export const SocialButtons = ({ className = "", ...props }) => {
   return (
-    <div className={`flex  gap-5 ${className}`} {...props}>
+    <div className={`flex gap-5 ${className}`} {...props}>
       {socialMediaData.map((social) => (
         <SocialButton
           key={social.name}
