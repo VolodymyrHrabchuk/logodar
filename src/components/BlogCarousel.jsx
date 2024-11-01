@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import ReusableButton from "./ui/ReusableButton";
+import { ReusableButton } from "./ui/ReusableButton";
+
 
 export default function BlogCarousel() {
   // State to store the Carousel API
@@ -97,9 +98,9 @@ export default function BlogCarousel() {
             </span>
             <div className='h-0.5 w-14 bg-orange absolute -bottom-1 left-0' />
           </div>
-          <h1 className='text-5xl font-lora text-black'>
+          <h2 className='text-5xl font-lora text-black'>
             Дізнайтеся більше у блозі &quot;ЛОГОДАР&quot;{" "}
-          </h1>
+          </h2>
           <p className='text-grey font-inter text-base'>
             Останні новини, корисні матеріали та авторські поради у сфері
             логопедії, мовленнєвої терапії та розвитку. Розширюйте знання разом
@@ -149,7 +150,7 @@ export default function BlogCarousel() {
                         </div>
                         <button
                           variant='outline'
-                          className='border-2 border-orange text-black hover:text-white hover:bg-orange rounded-md px-4 py-2 text-base font-normal max-w-56 w-full transition'
+                          className='border-2 border-orange text-black hover:bg-orange/20 rounded-md px-4 py-2 text-base font-normal max-w-56 w-full transition'
                         >
                           Дізнатися більше
                         </button>
@@ -193,7 +194,9 @@ export default function BlogCarousel() {
                 <div
                   key={index}
                   className={`h-2 w-2 rounded-full ${
-                    index === selectedIndex ? "bg-black" : "bg-black/50"
+                    index === selectedIndex
+                      ? "bg-black scale-125"
+                      : "bg-black/50"
                   }`}
                 />
               ))}

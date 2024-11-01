@@ -1,5 +1,6 @@
 import Image from "next/image";
-import ReusableButton from "./ui/ReusableButton";
+import { ReusableButton } from "./ui/ReusableButton";
+import RoundedText from "./ui/RoundedText";
 
 export default function HeroSection() {
   return (
@@ -31,7 +32,7 @@ export default function HeroSection() {
             <div className='flex items-center justify-center lg:justify-start gap-8 mt-10'>
               <button
                 className='w-16 h-16 rounded-full border-2 pl-2 border-orange flex items-center justify-center text-orange 
-             hover:bg-orange hover:text-white transition duration-300 group'
+             hover:bg-orange/20 hover:text-white transition duration-300 group'
                 aria-label='Play'
               >
                 {/* Inline SVG for Play Icon */}
@@ -63,8 +64,9 @@ export default function HeroSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className='absolute bottom-[-100px] left-[-120px] h-[240px] w-[240px]'>
-              <Image src='/image.png' alt='' fill className='object-contain' />
+            <div className='absolute bottom-[-5rem] left-[-5rem]'>
+              {/* <Image src='/image.png' alt='' fill className='object-contain' /> */}
+              <RoundedText />
             </div>
 
             <div className='absolute left-[-118px] top-56 h-[144px] w-[191px]'>

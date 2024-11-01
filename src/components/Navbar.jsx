@@ -20,26 +20,26 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div className='hidden lg:flex space-x-14 text-grey'>
-        <Link href='/' className='hover:text-black transition'>
+        <Link href='/' className='hover:underline'>
           Про Тетяну
         </Link>
-        <Link href='/pages' className='hover:text-black transition'>
+        <Link href='/pages' className='hover:underline'>
           Блог
         </Link>
-        <Link href='/services' className='hover:text-black transition'>
+        <Link href='/services' className='hover:underline'>
           Консультації
         </Link>
-        <Link href='/blog' className='hover:text-black transition'>
+        <Link href='/blog' className='hover:underline'>
           Каталог спеціалістів
         </Link>
       </div>
 
       {/* Action Buttons */}
       <div className='flex items-center space-x-4'>
-        <button className='hidden lg:inline-block border-2 text-md border-orange text-black px-6 py-2 rounded-md hover:bg-orange hover:text-white text-base transition'>
+        <button className='hidden lg:inline-block border-2 text-md border-orange text-black px-6 py-2 rounded-md hover:bg-orange/20  text-base transition'>
           Записатися на консультацію{" "}
         </button>
-        <button className='text-grey hover:text-black transition'>
+        <button className='text-grey hover:underline'>
           <FaSearch size={16} />
         </button>
       </div>
