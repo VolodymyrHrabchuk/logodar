@@ -2,12 +2,11 @@
 import React, { useState } from "react";
 import { ReusableButton } from "./ui/ReusableButton";
 
-
 const SubscribeSection = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className='max-w-[1400px] w-full mx-auto px-4 mt-64'>
+    <section className='hidden md:block max-w-[1400px] w-full mx-auto px-4 my-32'>
       <div className='flex items-center justify-between'>
         <h2 className='text-[2.5rem] leading-tight text-black mb-6 font-lora w-1/2'>
           Отримуйте новини просто <br />

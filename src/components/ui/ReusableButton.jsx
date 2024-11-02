@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 export const ReusableButton = ({ text }) => {
   return (
-    <button className='bg-black text-white py-3 px-10 rounded-full hover:bg-grey transition font-roboto font-normal text-base'>
+    <button className='bg-black text-white py-3 px-12 md:px-10 rounded-full hover:bg-grey transition font-roboto font-normal text-sm md:text-base'>
       {text}
     </button>
   );

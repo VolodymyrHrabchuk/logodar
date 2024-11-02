@@ -1,17 +1,17 @@
 import Image from "next/image";
-import {ReusableButton} from "./ui/ReusableButton";
+import { ReusableButton } from "./ui/ReusableButton";
 
 export default function ConsultationSection() {
   return (
     <section className='relative w-full overflow-hidden '>
-      <div className='mx-auto max-w-[1400px] px-4 py-16'>
+      <div className='mx-auto max-w-[1400px] px-4 pb-16'>
         <div className='flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between'>
-          <div className='relative w-full h-[500px] lg:h-[600px] '>
+          <div className='hidden md:block relative w-full h-[500px] lg:h-[600px] '>
             <Image
               src='/consult.png'
               alt='Professional consultant'
               fill
-              className='object-contain'
+              className=' object-contain'
               priority
             />
           </div>
@@ -22,19 +22,19 @@ export default function ConsultationSection() {
               <span className='text-sm text-black font-lora'>
                 Індивідуальні консультації
               </span>
-              <div className='h-0.5 w-14 bg-orange absolute -bottom-1 left-0' />
+              <div className='h-[0.19rem] w-[4.5rem] bg-orange absolute -bottom-1 left-0' />
             </div>
 
-            <h2 className='mb-6 text-5xl font-lora text-black'>
+            <h2 className='mb-4 md:mb-6 text-2xl md:text-5xl font-lora text-black'>
               We provide special care for your appearance and beauty
             </h2>
 
-            <div className='text-grey font-roboto text-base '>
+            <div className='text-grey font-roboto text-sm md:text-base '>
               <p>
                 At risus viverra adipiscing at in tellus integer feugiat
                 scelerisque. Pharetra diam sit amet nisl suscipit.
               </p>
-              <p className='pt-6'>
+              <p className='pt-3 md:pt-6'>
                 Risus commodo viverra maecenas accumsan lacus vel facilisis
                 volutpat est. Elit pellentesque habitant morbi tristique
                 senectus et netus et malesuada.

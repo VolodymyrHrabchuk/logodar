@@ -38,23 +38,23 @@ export default function ExpertsCarousel() {
 
   return (
     <section className='max-w-7xl mx-auto px-4 py-16 text-center relative overflow-visible'>
-      <div className='absolute left-0 bottom-0 w-[800px] h-[800px] -translate-x-1/3 translate-y-1/2 bg-orange rounded-full blur-[100px] opacity-10 z-0' />
+      <div className='hidden md:block absolute left-0 bottom-0 w-[800px] h-[800px] -translate-x-1/3 translate-y-1/2 bg-orange rounded-full blur-[100px] opacity-10 z-0' />
 
-      <div className='space-y-6 mb-16'>
-        <h3 className='text-base relative inline-block pb-2'>
+      <div className=' space-y-4 md:space-y-6 mb-16'>
+        <h3 className='text-sm md:text-base relative inline-block pb-2'>
           Каталог спеціалістів
-          <div className='absolute left-1/2 -translate-x-1/2 bottom-0 h-0.5 w-14 bg-orange' />
+          <div className='absolute left-1/2 -translate-x-1/2 bottom-0 h-[0.19rem] w-[4.5rem] bg-orange' />
         </h3>
-        <h2 className='text-4xl md:text-5xl font-lora'>
+        <h2 className='text-2xl md:text-5xl font-lora'>
           Supported by certified experts
         </h2>
-        <p className='text-grey max-w-2xl mx-auto text-base font-roboto'>
+        <p className='text-grey max-w-2xl mx-auto text-sm  md:text-base font-roboto'>
           At risus viverra adipiscing at in tellus integer feugiat scelerisque
           pharetra diam sit.
         </p>
       </div>
 
-      <div className='py-4'>
+      <div className='py-1 md:py-4'>
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -67,7 +67,7 @@ export default function ExpertsCarousel() {
             {experts.map((expert, index) => (
               <CarouselItem
                 key={expert.id}
-                className='md:basis-1/3 lg:basis-1/3 flex flex-col items-center justify-between'
+                className='basis-full flex-shrink-0  md:basis-1/3 lg:basis-1/3 flex flex-col items-center justify-between'
               >
                 <div
                   className={`pt-4 px-5 pb-10 my-2 rounded-t-full transition-all ${
@@ -88,7 +88,7 @@ export default function ExpertsCarousel() {
                   <p className='text-grey text-base font-inter mb-5'>
                     {expert.title}
                   </p>
-                  <SocialButtons className='justify-center' />
+                  <SocialButtons className='justify-center gap-2' />
                 </div>
               </CarouselItem>
             ))}

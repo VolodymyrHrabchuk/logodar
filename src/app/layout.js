@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <div className='relative min-h-screen bg-[#ebebeb] overflow-hidden'>
           {/* Blurred Circle Background */}
           <div
-            className='absolute -top-[700px] right-0 w-[1241px] h-[1241px] bg-circle rounded-full blur-3xl'
+            className='absolute -top-[800px] md:-top-[400px] -right-[700px] md:right-0 w-[1241px] h-[1241px] bg-circle rounded-full blur-3xl'
             style={{ transform: "translateX(30%)" }}
           ></div>
           <Navbar />

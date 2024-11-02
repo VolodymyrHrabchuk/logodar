@@ -4,24 +4,24 @@ import RoundedText from "./ui/RoundedText";
 
 export default function HeroSection() {
   return (
-    <section className='relative w-full overflow-hidden '>
-      <div className='mx-auto max-w-[1400px] px-4 py-16'>
-        <div className='flex flex-col items-center justify-between gap-20 lg:flex-row lg:items-start'>
+    <section className='relative w-full overflow-hidden'>
+      <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-16'>
+        <div className='flex flex-col-reverse items-center justify-between md:gap-20 lg:flex-row lg:items-start'>
           {/* Text Content */}
-          <div className='relative z-10 '>
-            <h1 className='font-lora text-[2.5rem] text-base leading-tight text-black md:text-[3.5rem] lg:text-[4rem]'>
+          <div className='relative z-10 text-center lg:text-left lg:w-1/2'>
+            <h1 className='font-lora text-2xl mt-10 md:mt-0 leading-tight text-black md:text-[3.5rem] lg:text-[4rem]'>
               Ярмак Тетяна Валеріївна
               <br />
               Засновниця центру &quot;ЛОГОДАР&quot;
               <br />
-              <span className='mt-2 block text-[2rem] md:text-[2.75rem] lg:text-[3.25rem]'>
+              <span className='mt-2 hidden md:block md:text-[2.75rem] lg:text-[3.25rem]'>
                 | Логопед, арт-терапевт,
                 <br />
                 бізнес-тренер
               </span>
             </h1>
 
-            <p className='mt-6 max-w-[500px] text-base font-roboto text-gray-600'>
+            <p className='mt-5 md:mt-6 max-w-[500px] text-sm md:text-base font-roboto text-grey mx-auto lg:mx-0'>
               21 рік педагогічного досвіду, понад 29 000 логопедичних
               консультацій. Авторка навчальних вебінарів для фахівців,
               організаторка міжнародних конференцій. Досвід допомоги
@@ -29,10 +29,11 @@ export default function HeroSection() {
               інсульт.
             </p>
 
-            <div className='flex items-center justify-center lg:justify-start gap-8 mt-10'>
+            <div className='flex items-center justify-center lg:justify-start gap-8 mt-5 md:mt-10'>
+              {/* Play Button - Hidden on Mobile */}
               <button
-                className='w-16 h-16 rounded-full border-2 pl-2 border-orange flex items-center justify-center text-orange 
-             hover:bg-orange/20 hover:text-white transition duration-300 group'
+                className='hidden lg:flex w-16 h-16 rounded-full border-2 pl-2 border-orange items-center justify-center text-orange 
+                 hover:bg-orange/20 hover:text-white transition duration-300 group'
                 aria-label='Play'
               >
                 {/* Inline SVG for Play Icon */}
@@ -52,24 +53,23 @@ export default function HeroSection() {
           </div>
 
           {/* Image Section */}
-          <div className='relative mt-18 w-full max-w-[514px]'>
-            <div className='relative aspect-[514/567] w-full'>
+          <div className='relative w-full max-w-[514px] lg:w-1/2 flex justify-center lg:justify-end'>
+            <div className='relative aspect-[514/567] w-[314px] sm:w-full'>
               <Image
                 src='/hero.png'
                 alt='Professional portrait'
                 fill
-                className='object-cover'
+                className='object-cover  '
                 priority
               />
             </div>
 
             {/* Decorative Elements */}
-            <div className='absolute bottom-[-5rem] left-[-5rem]'>
-              {/* <Image src='/image.png' alt='' fill className='object-contain' /> */}
+            <div className='absolute -bottom-6 -left-1 md:bottom-[-5rem] md:left-[-5rem]'>
               <RoundedText />
             </div>
 
-            <div className='absolute left-[-118px] top-56 h-[144px] w-[191px]'>
+            <div className='absolute md:left-[-118px] right-7 top-7 md:top-56 h-[64px] w-[92px] md:h-[144px] md:w-[191px] lg:block '>
               <Image
                 src='/elements.png'
                 alt=''

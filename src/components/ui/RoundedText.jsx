@@ -107,12 +107,8 @@ export default function Component() {
   }, []);
 
   return (
-    <div className='relative w-[180px] h-[180px] rounded-full border-2 border-black flex items-center justify-center bg-white/30 backdrop-blur-md'>
-      <canvas
-        ref={canvasRef}
-        className='absolute w-full h-full'
-        style={{ width: "180px", height: "180px" }}
-      />
+    <div className='relative w-[110px] h-[110px] sm:w-[180px] sm:h-[180px] rounded-full border-2 border-black flex items-center justify-center bg-white/30 backdrop-blur-md'>
+      <canvas ref={canvasRef} className='absolute w-full h-full' />
     </div>
   );
 }

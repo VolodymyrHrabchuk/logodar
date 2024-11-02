@@ -7,13 +7,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { ReusableButton } from "./ui/ReusableButton";
-
 
 export default function BlogCarousel() {
   // State to store the Carousel API
@@ -88,25 +85,27 @@ export default function BlogCarousel() {
   }, [carouselApi]);
 
   return (
-    <div className='max-w-[1400px] w-full mx-auto px-4 mt-64'>
+    <section className='max-w-[1400px] w-full mx-auto px-4 mt-24 md:mt-[12.5rem]'>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 px-4'>
         {/* Left Section */}
-        <div className='space-y-6'>
+        <div className='space-y-5 md:space-y-6'>
           <div className='relative'>
-            <span className='text-sm text-black font-lora'>
+            <span className='text-sm md:text-base text-black font-lora'>
               Освітні продукти та події
             </span>
-            <div className='h-0.5 w-14 bg-orange absolute -bottom-1 left-0' />
+            <div className='h-[0.19rem] w-[4.5rem] bg-orange absolute -bottom-1 left-0' />
           </div>
-          <h2 className='text-5xl font-lora text-black'>
+          <h2 className='text-2xl md:text-5xl font-lora text-black'>
             Дізнайтеся більше у блозі &quot;ЛОГОДАР&quot;{" "}
           </h2>
-          <p className='text-grey font-inter text-base'>
+          <p className='text-grey font-inter text-sm md:text-base mt-5'>
             Останні новини, корисні матеріали та авторські поради у сфері
             логопедії, мовленнєвої терапії та розвитку. Розширюйте знання разом
             з провідними експертами.
           </p>
-          <ReusableButton text='Детальніше' />
+          <div className='hidden md:block'>
+            <ReusableButton text='Детальніше' />
+          </div>
         </div>
 
         {/* Carousel Section */}
@@ -122,7 +121,10 @@ export default function BlogCarousel() {
           >
             <CarouselContent>
               {posts.map((post) => (
-                <CarouselItem key={post.id}>
+                <CarouselItem
+                  key={post.id}
+                  className='basis-full md:basis-1/2  flex-shrink-0 '
+                >
                   <Card className='border-none shadow-none bg-transparent h-full'>
                     <CardContent className='p-0 h-full flex flex-col justify-between'>
                       {/* Image Section */}
@@ -139,18 +141,18 @@ export default function BlogCarousel() {
                         </Badge>
                       </div>
                       {/* Content Section */}
-                      <div className='mt-6 space-y-4 px-4 flex-grow flex flex-col justify-between'>
+                      <div className='mt-6 space-y-4 px-0 md:px-4 flex-grow flex flex-col justify-between'>
                         <div>
-                          <h2 className='text-2xl text-black font-lora tracking-tight'>
+                          <h2 className='text-xl md:text-2xl text-black font-lora '>
                             {post.title}
                           </h2>
-                          <p className='text-grey font-inter text-base pt-2 pb-5'>
+                          <p className='text-grey font-inter text-sm md:text-base pt-2 pb-5'>
                             {post.description}
                           </p>
                         </div>
                         <button
                           variant='outline'
-                          className='border-2 border-orange text-black hover:bg-orange/20 rounded-md px-4 py-2 text-base font-normal max-w-56 w-full transition'
+                          className='border-2 border-orange text-black hover:bg-orange/20 rounded-md px-4 py-2 text-sm md:text-base font-normal max-w-40 md:max-w-56 w-full transition'
                         >
                           Дізнатися більше
                         </button>
@@ -228,6 +230,6 @@ export default function BlogCarousel() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
