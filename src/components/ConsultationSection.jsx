@@ -3,15 +3,15 @@ import { ReusableButton } from "./ui/ReusableButton";
 
 export default function ConsultationSection() {
   return (
-    <section className='relative w-full overflow-hidden '>
-      <div className='mx-auto max-w-[1400px] px-4 pb-16'>
+    <section className='relative w-full overflow-hidden'>
+      <div className='mx-auto max-w-[1400px] px-4 py-16 md:pt-0 md:pb-16'>
         <div className='flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between'>
-          <div className='hidden md:block relative w-full h-[500px] lg:h-[600px] '>
+          <div className='hidden md:block relative w-full h-[500px] lg:h-[600px]'>
             <Image
               src='/consult.png'
               alt='Professional consultant'
               fill
-              className=' object-contain'
+              className='object-contain'
               priority
             />
           </div>
@@ -29,7 +29,7 @@ export default function ConsultationSection() {
               We provide special care for your appearance and beauty
             </h2>
 
-            <div className='text-grey font-roboto text-sm md:text-base '>
+            <div className='text-grey font-roboto text-sm md:text-base'>
               <p>
                 At risus viverra adipiscing at in tellus integer feugiat
                 scelerisque. Pharetra diam sit amet nisl suscipit.
