@@ -4,7 +4,7 @@ import RoundedText from "./ui/RoundedText";
 
 export default function HeroSection() {
   return (
-    <section className='relative w-full overflow-hidden'>
+    <section className='relative w-full overflow-hidden z-0'>
       <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-16'>
         <div className='flex flex-col-reverse items-center justify-between md:gap-20 lg:flex-row lg:items-start'>
           {/* Text Content */}
