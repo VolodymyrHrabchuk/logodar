@@ -17,17 +17,16 @@ export default function Footer() {
             <Link href='/' className='hidden md:inline-block'>
               <Image src={"/logo.svg"} alt='Logo' width={70} height={70} />
             </Link>
-            <p className='hidden md:block text-grey font-roboto text-base'>
-              Risus commodo viverra maecenas accumsan lacus vel facilisis
-              volutpat est Elit pellentesque habitant.
+            <p className='hidden md:block text-grey font-roboto text-base '>
+              «Памятайте – мовлення важливе!» Т.Ярмак
             </p>
             <div className='space-y-2'>
-              <h3 className='font-lora uppercase font-base relative pb-2'>
-                OPEN HOURS
+              <h3 className='font-lora font-base relative pb-2'>
+                Робочі години{" "}
                 <div className='absolute left-0  bottom-0 h-[0.19rem] w-[4.5rem] bg-orange' />
               </h3>
               <p className='text-grey font-roboto text-base'>
-                Monday - Saturday : 10 AM - 07 PM
+                Понеділок - Субота : 10:00- 19:00
               </p>
             </div>
             <SocialButtons className='flex items-start gap-2' />

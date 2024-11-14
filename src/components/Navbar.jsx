@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+
 import { useState } from "react";
 import ConsultationForm from "./FormPopup";
 
@@ -27,9 +27,6 @@ export default function Navbar() {
 
       {/* Navigation Links - Visible on screens >= tablet */}
       <div className='hidden md:flex space-x-6 lg:space-x-14 text-grey'>
-        <Link href='/' className='hover:underline'>
-          Про Тетяну
-        </Link>
         <Link href='/pages' className='hover:underline'>
           Блог
         </Link>

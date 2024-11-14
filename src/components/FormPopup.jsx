@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import axios from "axios";
 
-const phoneRegex = /^(\+380|0)\d{9}$/; // Example regex for Ukrainian phone numbers
+const phoneRegex = /^(\+380|0)\d{9}$/;
 
 const formSchema = z.object({
   name: z.string().min(2, {

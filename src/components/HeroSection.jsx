@@ -5,28 +5,25 @@ import RoundedText from "./ui/RoundedText";
 export default function HeroSection() {
   return (
     <section className='relative w-full overflow-hidden z-0'>
-      <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-16'>
+      <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-20'>
         <div className='flex flex-col-reverse items-center justify-between md:gap-20 lg:flex-row lg:items-start'>
           {/* Text Content */}
           <div className='relative z-10 text-center lg:text-left lg:w-1/2'>
-            <h1 className='font-lora text-2xl mt-10 md:mt-0 leading-tight text-black md:text-[3.5rem] lg:text-[4rem]'>
-              Ярмак Тетяна Валеріївна
-              <br />
-              Засновниця центру &quot;ЛОГОДАР&quot;
-              <br />
-              <span className='mt-2 hidden md:block md:text-[2.75rem] lg:text-[3.25rem]'>
-                | Логопед, арт-терапевт,
-                <br />
-                бізнес-тренер
+            <h1 className='font-lora text-2xl mt-10 md:mt-0 leading-tight text-black md:text-[3rem] lg:text-[3.25rem] w-full'>
+              <span className='md:whitespace-nowrap'>
+                Інноваційний реабілітаційний
+              </span>{" "}
+              <span className='md:whitespace-nowrap'>
+                онлайн центр Тетяни Ярмак
               </span>
+              <br />
+              &quot;ЛОГОДАР&quot;
             </h1>
 
             <p className='mt-5 md:mt-6 max-w-[500px] text-sm md:text-base font-roboto text-grey mx-auto lg:mx-0'>
-              21 рік педагогічного досвіду, понад 29 000 логопедичних
-              консультацій. Авторка навчальних вебінарів для фахівців,
-              організаторка міжнародних конференцій. Досвід допомоги
-              онкопацієнтам, учасникам бойових дій та людям, які перенесли
-              інсульт.
+              Відновлення мови та мовлення при тяжких порушеннях.
+              Освітньо-тренінгові послуги для логопедів, терапевтів мови та
+              мовлення, фахівців реабілітаційного напрямку, психологів.
             </p>
 
             <div className='flex items-center justify-center lg:justify-start gap-8 mt-5 md:mt-10'>
@@ -59,7 +56,7 @@ export default function HeroSection() {
                 src='/hero.png'
                 alt='Professional portrait'
                 fill
-                className='object-cover  '
+                className='object-cover'
                 priority
               />
             </div>

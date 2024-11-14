@@ -12,14 +12,30 @@ import { SocialButtons } from "@/utils/helper";
 const experts = [
   {
     id: 1,
-    name: "MARIAH DOE",
-    title: "Dermatologist",
-    image: "/preview-1.jpg",
+    name: "Міністерство освіти та науки України",
+    title: "",
+    image: "/mon.jpg",
   },
-  { id: 2, name: "JANE DOE", title: "Beautician", image: "/preview-2.jpg" },
-  { id: 3, name: "JOHN DOE", title: "Surgeon", image: "/preview-3.jpg" },
-  { id: 4, name: "JOHN DOE", title: "Therapist", image: "/preview-2.jpg" },
-  { id: 5, name: "BOB DOE", title: "Therapist", image: "/preview-3.jpg" },
+  {
+    id: 2,
+    name: "Житомирський державний університет імені Івана Франка",
+    title: "",
+    image: "/university-1.png",
+  },
+  { id: 3, name: "Tренінговий центр ”СУТО”", title: "", image: "/suto.jpg" },
+  {
+    id: 4,
+    name: "Міністерство освіти та науки України",
+    title: "",
+    image: "/mon.jpg",
+  },
+  {
+    id: 5,
+    name: "Житомирський державний університет імені Івана Франка",
+    title: "",
+    image: "/university-1.png",
+  },
+  { id: 6, name: "Tренінговий центр ”СУТО”", title: "", image: "/suto.jpg" },
 ];
 
 export default function ExpertsCarousel() {
@@ -40,17 +56,16 @@ export default function ExpertsCarousel() {
     <section className='max-w-7xl mx-auto px-4 py-16 text-center relative overflow-visible'>
       <div className='hidden md:block absolute left-0 bottom-0 w-[800px] h-[800px] -translate-x-1/3 translate-y-1/2 bg-orange rounded-full blur-[100px] opacity-10 z-0' />
 
-      <div className=' space-y-4 md:space-y-6 mb-16'>
+      <div className='space-y-4 md:space-y-6 mb-16'>
         <h3 className='text-sm md:text-base relative inline-block pb-2'>
-          Каталог спеціалістів
+          Співпраця
           <div className='absolute left-1/2 -translate-x-1/2 bottom-0 h-[0.19rem] w-[4.5rem] bg-orange' />
         </h3>
         <h2 className='text-2xl md:text-5xl font-lora'>
-          Supported by certified experts
+          З ким ми співпрацюємо?
         </h2>
-        <p className='text-grey max-w-2xl mx-auto text-sm  md:text-base font-roboto'>
-          At risus viverra adipiscing at in tellus integer feugiat scelerisque
-          pharetra diam sit.
+        <p className='text-grey max-w-2xl mx-auto text-sm md:text-base font-roboto'>
+          Ось декілька інституцій з якими ми співпрацюємо:
         </p>
       </div>
 
@@ -67,28 +82,30 @@ export default function ExpertsCarousel() {
             {experts.map((expert, index) => (
               <CarouselItem
                 key={expert.id}
-                className='basis-full flex-shrink-0  md:basis-1/3 lg:basis-1/3 flex flex-col items-center justify-between'
+                className='basis-full flex-shrink-0 md:basis-1/3 lg:basis-1/3 flex flex-col items-center'
               >
                 <div
                   className={`pt-4 px-5 pb-10 my-2 rounded-t-full transition-all ${
                     index === selectedIndex ? "ring-2 ring-white" : ""
-                  } mx-2`}
+                  } mx-2 flex flex-col justify-between h-full`}
                 >
                   <div className='relative rounded-full overflow-hidden mb-6 w-[260px] h-[260px] mx-auto ring-1 ring-gray-100'>
                     <Image
                       src={expert.image}
                       alt={expert.name}
-                      fill
+                      layout='fill'
                       className='object-cover'
                     />
                   </div>
-                  <h3 className='text-base font-inter mb-2 mt-10'>
-                    {expert.name}
-                  </h3>
-                  <p className='text-grey text-base font-inter mb-5'>
-                    {expert.title}
-                  </p>
-                  <SocialButtons className='justify-center gap-2' />
+                  <div className='flex flex-col flex-grow items-center justify-center'>
+                    <h3 className='text-base font-inter mb-2  max-w-52 w-full mx-auto text-center'>
+                      {expert.name}
+                    </h3>
+                    <p className='text-grey text-base font-inter mb-5 text-center'>
+                      {expert.title}
+                    </p>
+                  </div>
+                  <SocialButtons className='justify-center gap-2 mt-auto' />
                 </div>
               </CarouselItem>
             ))}

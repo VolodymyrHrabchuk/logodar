@@ -26,19 +26,31 @@ export default function ConsultationSection() {
             </div>
 
             <h2 className='mb-4 md:mb-6 text-2xl md:text-5xl font-lora text-black'>
-              We provide special care for your appearance and beauty
+              Центр «ЛОГОДАР» проводить індивідуальні консультації за
+              напрямками:
             </h2>
 
             <div className='text-grey font-roboto text-sm md:text-base'>
-              <p>
-                At risus viverra adipiscing at in tellus integer feugiat
-                scelerisque. Pharetra diam sit amet nisl suscipit.
-              </p>
-              <p className='pt-3 md:pt-6'>
-                Risus commodo viverra maecenas accumsan lacus vel facilisis
-                volutpat est. Elit pellentesque habitant morbi tristique
-                senectus et netus et malesuada.
-              </p>
+              <ul className="list-disc pl-4">
+                <li>Консультування (супервізії для логопедів, психологів)</li>
+                <li>
+                  Консультування пацієнтів з питань відновлення мови та
+                  мовлення, що перенесли інсульт
+                </li>
+                <li>
+                  Консультування пацієнтів з питань відновлення мови та
+                  мовлення, що перенесли черепно-мозкові травми
+                </li>
+                <li>
+                  Консультування учасників бойових дій з питань відновлення мови
+                  та мовлення, спричинених вибуховою травмою
+                </li>
+                <li>
+                  Консультування батьків з питань поновлення мовлення дитини при
+                  заїканні
+                </li>
+                <li>Консультування пацієнтів з порушенням голосових функцій</li>
+              </ul>
             </div>
 
             <div className='mt-8'>

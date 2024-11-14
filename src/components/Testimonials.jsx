@@ -12,9 +12,9 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "I am very happy with this beauty clinic. They really pamper their customers and give everything with the best",
-    author: "REINA DOE",
-    title: "Artist / Singer",
+      'Дякую пані Логопед Тетяна Ярмак спікер онлайн конференції автора Алена Щербюк з метою здійснення благодійного проекту Татьяна Курганская підтримки батьків особливих діток! Ваш надихаючий, мотиваційний, артистичний вебінар "Мій шлях до казки" мене окрилив!',
+    author: "Анна Полыщук",
+    title: "Учасниця онлайн конфереції ",
     image: "/testimonial-avatar.jpg",
   },
   {
@@ -130,7 +130,7 @@ export default function TestimonialCarousel() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem
                 key={testimonial.id}
-                className='w-full flex-[0_0_100%] pb-0'
+                className='w-full flex-[0_0_100%] pb-0 flex items-center justify-center'
               >
                 <div className='flex flex-col items-center text-center text-white px-4 md:px-20'>
                   <blockquote className='text-2xl md:text-[2.5rem] leading-snug font-lora mb-12 max-w-4xl'>
