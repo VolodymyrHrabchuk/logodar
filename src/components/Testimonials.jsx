@@ -12,26 +12,26 @@ const testimonials = [
   {
     id: 1,
     quote:
-      'Дякую пані Логопед Тетяна Ярмак спікер онлайн конференції автора Алена Щербюк з метою здійснення благодійного проекту Татьяна Курганская підтримки батьків особливих діток! Ваш надихаючий, мотиваційний, артистичний вебінар "Мій шлях до казки" мене окрилив!',
-    author: "Анна Полыщук",
-    title: "Учасниця онлайн конфереції ",
-    image: "/testimonial-avatar.jpg",
+      "14 листопада 2024 року, до Міжнародного дня логопеда, фахівці ІРЦ взяли участь у «ІІ Мовленнєвому лабораторіумі 2024» від освітньо-тренінгового центру «Логодар» Тетяни Ярмак, де обговорювали роль ШІ, діджиталізації та сучасних посібників у роботі логопеда.Дякуємо що поділилися досвідом!",
+    author: "Марія Васюник",
+    title: "Новояворівський інклюзивно- ресурсний центр",
+    image: "/person-1.jpg",
   },
   {
     id: 2,
     quote:
-      "The staff is very professional and the services are top-notch. Highly recommended!",
-    author: "SARAH SMITH",
-    title: "Business Owner",
-    image: "/testimonial-avatar.jpg",
+      'Дякую пані Логопед Тетяна Ярмак спікер онлайн конференції автора Алена Щербюк з метою здійснення благодійного проекту Татьяна Курганская підтримки батьків особливих діток! Ваш надихаючий, мотиваційний, артистичний вебінар "Мій шлях до казки" мене окрилив!',
+    author: "Анна Поліщук",
+    title: "Учасниця онлайн конфереції ",
+    image: "/person-0.jpg",
   },
   {
     id: 3,
     quote:
-      "Amazing experience every time. The attention to detail is outstanding",
-    author: "EMMA WILSON",
-    title: "Fashion Designer",
-    image: "/testimonial-avatar.jpg",
+      "Сьогодні фахівці ІРЦ Залізничного району відсвяткували День логопеда семінаром, на якому обговорювали використання штучного інтелекту, індивідуальні програми розвитку та методичні посібники в роботі з дітьми з особливими потребами. Дякуємо організаторам і спікерам за цінні знання та натхнення!",
+    author: "Марія Яремко",
+    title: 'КУ "Інклюзивно-ресурсний центр Залізничного району м. Львова"',
+    image: "/person-2.jpg",
   },
 ];
 
@@ -137,20 +137,20 @@ export default function TestimonialCarousel() {
                     &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <div className='flex flex-col items-center'>
-                    <div className='w-20 h-20 rounded-full overflow-hidden mb-4 border-1 border-white'>
+                    <div className='relative w-20 h-20 rounded-full overflow-hidden mb-4 border border-white'>
                       <Image
                         src={testimonial.image}
                         alt={testimonial.author}
-                        width={80}
-                        height={80}
+                        layout='fill' // Makes the image fill the parent container
+                        objectFit='cover' // Ensures the image covers the container without distortion
                         className='object-cover'
                       />
                     </div>
-                    <div className='font-inter'>
-                      <div className='font-roboto font-base uppercase mb-1'>
+                    <div className='font-inter text-center'>
+                      <div className='font-roboto text-base uppercase mb-1'>
                         {testimonial.author}
                       </div>
-                      <div className='text-white font-roboto font-light '>
+                      <div className='text-white font-roboto font-light'>
                         {testimonial.title}
                       </div>
                     </div>

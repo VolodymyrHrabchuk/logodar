@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className='relative z-10 py-4 px-4 md:px-6 2xl:px-20 flex items-center justify-between'>
       {/* Logo */}
-      <div className='text-orange font-bold text-2xl'>
+      <div className='text-orange font-bold text-2xl flex items-center gap-2'>
         <Link href='/' className='flex items-center'>
           <Image
             src='/logo.svg'
@@ -23,6 +23,9 @@ export default function Navbar() {
             className='h-14 w-14'
           />
         </Link>
+        <p className='hidden md:block text-grey font-roboto text-base font-normal '>
+          «Памятайте – мовлення важливе!» Т.Ярмак
+        </p>
       </div>
 
       {/* Navigation Links - Visible on screens >= tablet */}

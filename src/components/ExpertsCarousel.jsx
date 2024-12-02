@@ -105,7 +105,7 @@ export default function ExpertsCarousel() {
                       {expert.title}
                     </p>
                   </div>
-                  <SocialButtons className='justify-center gap-2 mt-auto' />
+                  {/* <SocialButtons className='justify-center gap-2 mt-auto' /> */}
                 </div>
               </CarouselItem>
             ))}

@@ -53,10 +53,10 @@ export default function HeroSection() {
           <div className='relative w-full max-w-[514px] lg:w-1/2 flex justify-center lg:justify-end'>
             <div className='relative aspect-[514/567] w-[314px] sm:w-full'>
               <Image
-                src='/hero.png'
+                src='/hero.jpg'
                 alt='Professional portrait'
                 fill
-                className='object-cover'
+                className='object-cover rounded-t-full'
                 priority
               />
             </div>
