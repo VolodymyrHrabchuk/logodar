@@ -160,10 +160,24 @@ export default function ConsultationForm({ isOpen, setIsOpen }) {
         </p>
         <button
           onClick={() => setIsOpen(false)}
-          className='absolute top-5 right-8 text-white hover:text-black transition-colors text-3xl'
+          className='absolute top-10 right-10 text-white hover:text-black transition-colors text-3xl'
           aria-label='Close'
         >
-          &times;
+          <svg
+            width='22'
+            height='22'
+            viewBox='0 0 22 22'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M1.38965 20.612L11.0018 10.9999L20.614 20.612M20.614 1.3877L11 10.9999L1.38965 1.3877'
+              stroke='white'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
         </button>
       </div>
     </div>

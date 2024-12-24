@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { ReusableButton } from "./ui/ReusableButton";
+import Link from "next/link";
 
 export default function BlogCarousel() {
   // State to store the Carousel API
@@ -24,7 +25,8 @@ export default function BlogCarousel() {
       image: "/swiper-1.jpg",
       title: "Логопед про те, як заговорити знову після інсульту",
       description:
-        "Ця випуск Майстерні, буде корисний тим, хто стикається з викликами мовленнєвого відновлення після інсульту. Логопед – Тетяна Ярмак пояснює роль логопеда у реабілітації, т...",
+        "Логопед – Тетяна Ярмак пояснює роль логопеда у реабілітації, типи мовленнєвих патологій, причини їх виникнення, а також методи та підходи до відновлення мовленн...",
+      url: "https://www.youtube.com/watch?v=CAu0oAJP9NE&ab_channel=RadioM",
       tag: "Подкаст",
     },
     {
@@ -33,24 +35,54 @@ export default function BlogCarousel() {
       title: "Чи допоможе логопед знову заговорити?",
       description:
         "У цьому епізоді 'Майстерні' ми зустрічаємося з Тетяною Ярмак, експертом-логопедом, щоб обговорити широкий спектр питань мовленнєвого розвитку. Від розкриття впливу оточен...",
+      url: "https://www.youtube.com/watch?v=1ogr9OmzHfc&ab_channel=RadioM",
       tag: "Подкаст",
     },
     {
       id: 3,
-      image: "/swiper-1.jpg",
-      title: "Integer molestie lorem at massa",
-      description:
-        "Facilisis in pretium nisl aliquet. Nulla volutpat aliquam velit.",
+      image: "/swiper-3.jpg",
+      title:
+        "Логопединя неврологічного відділення Львівської обласної клінічної лікарні, засновниця освітньо-тренінгового Центру 'Логодар' Тетяна Ярмак.",
+      description: "",
+      url: "https://www.facebook.com/watch/live/?ref=watch_permalink&v=233962409567972",
       tag: "Подкаст",
     },
     {
       id: 4,
-      image: "/swiper-2.jpg",
-      title: "Another Post Title",
-      description: "Additional description for the fourth post goes here.",
-      tag: "Подкаст",
+      image: "/swiper-4.jpg",
+      title: "Інтерактивний логопедичний тренінг в Івано-Франківську",
+      description:
+        "Зачарувати голосом. Правильна вимова в дитини, відповідна інтонація - мрія кожної мами. Логопед - одна із найпопулярніших професій сучасності. Прикарпатські фахівці зібралися на темат... ",
+      url: "https://www.youtube.com/watch?v=5YlAe5xF9ds&ab_channel=%D0%A2%D0%B5%D0%BB%D0%B5%D1%80%D0%B0%D0%B4%D1%96%D0%BE%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D1%96%D1%8F%D0%92%D0%95%D0%96%D0%90",
+      tag: "Репортаж",
     },
-    // Add more posts as needed
+    {
+      id: 5,
+      image: "/swiper-5.jpg",
+      title: "Тетяна Ярмак. Порушення мовлення та поради від логопеда",
+      description:
+        "Побільшало фобій та мовленнєвих затримок, додалася тривожність. Так велика війна вплинула на багатьох дітей і дорослих. Дитячі психологи та педагоги-дефектологи в од... ",
+      url: "https://soundcloud.com/user-2462259/logoped-21-12-2023?si=9558e0af9d4a483cbb0c08c298dc549b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      tag: "Стрім",
+    },
+    {
+      id: 6,
+      image: "/swiper-6.jpg",
+      title: "Мовленнєвий лабораторіум 2023",
+      description:
+        "'Мовленнєвий лабораторіум 2023' — концентрат новаторських підходів, кейсів та лайфхаків для логопедів, спрямований на обмін досвідом і вдосконалення професійних навичок.",
+      url: "https://www.prostir.ua/event/u-prymischenni-filiji-42-lvivskoji-munitsypalnoji-biblioteky-vidbudetsya-osvitnij-zahid-movlennevyj-laboratorium-2023-osin/",
+      tag: "Репортаж",
+    },
+    {
+      id: 7,
+      image: "/swiper-7.jpg",
+      title: "Мовленнєвий лабораторіум 2023",
+      description:
+        "На Львівщині 12 грудня 2023 року відбувся черговий «Мовленнєвий лабораторіум 2023» / ЗИМА / — масштабний захід для логопедів, який об’єднав понад 350 фахівців регіону. Учасники мали змогу обговорити актуальні пит...",
+      url: "https://4studio.com.ua/novyny/na-lvivshhyni-vidbuvsya-movlennyevyj-laboratorium-foto-video/",
+      tag: "Репортаж",
+    },
   ];
 
   // Handlers to navigate the carousel
@@ -154,7 +186,14 @@ export default function BlogCarousel() {
                           variant='outline'
                           className='border-2 border-orange text-black hover:bg-orange/20 rounded-md px-4 py-2 text-sm md:text-base font-normal max-w-40 md:max-w-56 w-full transition'
                         >
-                          Дізнатися більше
+                          <Link
+                            href={post.url}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            aria-label='link'
+                          >
+                            Дізнатися більше
+                          </Link>
                         </button>
                       </div>
                     </CardContent>

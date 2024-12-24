@@ -1,8 +1,39 @@
+// components/HeroSection.jsx
+"use client";
+
 import Image from "next/image";
 import { ReusableButton } from "./ui/ReusableButton";
 import RoundedText from "./ui/RoundedText";
+import HeroPopup from "./HeroPopup";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open the modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
   return (
     <section className='relative w-full overflow-hidden z-0'>
       <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-20'>
@@ -21,7 +52,7 @@ export default function HeroSection() {
             </h1>
 
             <p className='mt-5 md:mt-6 max-w-[500px] text-sm md:text-base font-roboto text-grey mx-auto lg:mx-0'>
-              Відновлення мови та мовлення при тяжких порушеннях.
+              Відновлення та корекція тяжких порушень мови та мовлення.
               Освітньо-тренінгові послуги для логопедів, терапевтів мови та
               мовлення, фахівців реабілітаційного напрямку, психологів.
             </p>
@@ -45,7 +76,7 @@ export default function HeroSection() {
                   <path d='M62.6697 40.5394L5.73568 73.053C3.40239 74.3855 0.500004 72.7006 0.500004 70.0137L0.500007 4.98655C0.500007 2.29958 3.40239 0.614747 5.73568 1.94723L62.6697 34.4608C65.0221 35.8042 65.0221 39.196 62.6697 40.5394Z' />
                 </svg>
               </button>
-              <ReusableButton text='Детальніше' />
+              <ReusableButton text='Детальніше' onClick={handleOpenModal} />
             </div>
           </div>
 
@@ -77,6 +108,41 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Modal Implementation */}
+      <HeroPopup isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h2 className='text-2xl md:text-3xl lg:text-4xl font-regular font-lora mb-4 text-center text-white'>
+          Вітаємо Вас на платформі
+          <br /> Інноваційного реабілітаційнго онлайн <br />
+          центру Тетяни Ярмак «ЛОГОДАР»!
+        </h2>
+
+        <p className='text-white mb-4 text-sm md:text-base'>
+          Наш центр створено з метою можливості отримувати фахову допомогу
+          онлайн всім, хто має тяжкі порушення мови та мовлення та проводить:
+          діагностику та консультування мовленнєвих порушень.
+          Корекційно-відновлювальну роботу з подолання заїкання у дітей,
+          підлітків та дорослих за власною методикою «STOPзаїкання». Відновлення
+          мови та мовлення мовлення в післяінсультних станах (афазії).
+          Відновлення та реабілітація мовлення у учасників бойових дій після
+          поранень в реабілітаційному періоді, контузій. Поновлення мовлення при
+          черепно-мозкових травмах, онкології, після операцій головного мозку.
+          Постановка голосу. Корекція мовленнєвого дихання. Постановка звуків,
+          робота з порушеннями голосового апарату.
+        </p>
+        <p className='text-white mb-4 text-sm md:text-base'>
+          Засновниця центру Тетяна Ярмак: Логопед-фонопед-афазіолог. Компетенції
+          та досвід: 21 рік педагогічнго досвіду, з них в логопедії з 2015року.
+          Провела понад 29000 логопедичних консультацій. Заснувала міжнародний
+          конгрес з голосу. Фахівець-консультант з питань інклюзії в Україні.
+          Логопед неврологічного відділення Львівської обласної клінічної
+          лікарні. Викладачка акторської майстерності та сценічної мови.
+          Тренерка з ораторської майстерності. Акторка. Режисерка.
+          Бізнес-тренер. Арт-коуч, АРТ-терапевт. Організаторка, спікерка
+          всеукраїнських, міжнародних заходів для логопедів, корекційних
+          педагогів, викладачів вокалу та сценічної мови
+        </p>
+      </HeroPopup>
     </section>
   );
 }

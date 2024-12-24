@@ -7,7 +7,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { SocialButtons } from "@/utils/helper";
+import { webIcon } from "./ui/Icons";
+import SocialButton from "./ui/ReusableButton";
 
 const experts = [
   {
@@ -15,27 +16,64 @@ const experts = [
     name: "Міністерство освіти та науки України",
     title: "",
     image: "/mon.jpg",
+    url: "https://mon.gov.ua/",
   },
   {
     id: 2,
     name: "Житомирський державний університет імені Івана Франка",
     title: "",
     image: "/university-1.png",
+    url: "https://zu.edu.ua/",
   },
-  { id: 3, name: "Tренінговий центр ”СУТО”", title: "", image: "/suto.jpg" },
+  {
+    id: 3,
+    name: "Tренінговий центр ”СУТО”",
+    title: "",
+    image: "/suto.jpg",
+    url: "https://www.suto-tc.com/",
+  },
   {
     id: 4,
-    name: "Міністерство освіти та науки України",
+    name: "Київський столичний університет імені Бориса Грінченка",
     title: "",
-    image: "/mon.jpg",
+    image: "/university-2.png",
+    url: "https://kubg.edu.ua/",
   },
   {
     id: 5,
-    name: "Житомирський державний університет імені Івана Франка",
+    name: "Громадська організація «Територія розвитку»",
     title: "",
-    image: "/university-1.png",
+    image: "/university-3.jpg",
+    url: "https://www.facebook.com/groups/toriyarozvytku",
   },
-  { id: 6, name: "Tренінговий центр ”СУТО”", title: "", image: "/suto.jpg" },
+  {
+    id: 6,
+    name: "Компанія “ЛОГОЗОН”",
+    title: "",
+    image: "/university-4.jpg",
+    url: "https://logozon.org.ua/",
+  },
+  {
+    id: 7,
+    name: "Департамент освіти Львівської обласної адміністрації",
+    title: "",
+    image: "/university-5.jpg",
+    url: "https://osvita.loda.gov.ua/",
+  },
+  {
+    id: 8,
+    name: "Львівський обласний інститут післядипломної педагогічної освіти",
+    title: "",
+    image: "/university-6.jpg",
+    url: "https://loippo.lviv.ua/",
+  },
+  {
+    id: 9,
+    name: "Департамент освіти Івано-Франківської обласної адміністрації",
+    title: "",
+    image: "/university-7.jpg",
+    url: "https://www.if.gov.ua/struktura/departament-osviti-nauki-ta-molodizhnoyi-politiki",
+  },
 ];
 
 export default function ExpertsCarousel() {
@@ -106,6 +144,12 @@ export default function ExpertsCarousel() {
                     </p>
                   </div>
                   {/* <SocialButtons className='justify-center gap-2 mt-auto' /> */}
+                  <SocialButton
+                    icon={webIcon}
+                    key={expert.id}
+                    url={expert.url}
+                    className='justify-center'
+                  />
                 </div>
               </CarouselItem>
             ))}
