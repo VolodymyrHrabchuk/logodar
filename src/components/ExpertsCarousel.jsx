@@ -91,7 +91,7 @@ export default function ExpertsCarousel() {
   }, [carouselApi]);
 
   return (
-    <section className='max-w-7xl mx-auto px-4 py-16 text-center relative overflow-visible'>
+    <div className='max-w-7xl mx-auto px-4 py-16 text-center relative overflow-visible'>
       <div className='hidden md:block absolute left-0 bottom-0 w-[800px] h-[800px] -translate-x-1/3 translate-y-1/2 bg-orange rounded-full blur-[100px] opacity-10 z-0' />
 
       <div className='space-y-4 md:space-y-6 mb-16'>
@@ -213,6 +213,6 @@ export default function ExpertsCarousel() {
           </svg>
         </button>
       </div>
-    </section>
+    </div>
   );
 }

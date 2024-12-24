@@ -17,9 +17,9 @@ export default function TreatmentSection() {
   ];
 
   return (
-    <section className='w-full py-12  md:py-16'>
+    <div className='w-full py-12  md:py-16' id="consultation">
       <div className='container mx-auto max-w-7xl px-4'>
-        <div className='flex flex-col gap-28 lg:flex-row lg:items-center lg:justify-between'>
+        <div className='flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between'>
           {/* Text Content with Treatment List */}
           <div className='flex flex-col space-y-6 md:space-y-12'>
             <h2 className='mb-6 text-2xl md:text-5xl font-lora text-black whitespace-nowrap'>
@@ -63,17 +63,32 @@ export default function TreatmentSection() {
           </div>
 
           {/* Image Section */}
-          <div className='hidden md:block relative aspect-square w-full max-w-xl'>
-            <Image
-              src='/prices.png'
-              alt='Pricing illustration'
-              fill
-              className='object-cover'
-              priority
-            />
+
+          <div className='hidden md:flex relative   items-end  gap-10'>
+            <div className='relative w-[200px] h-[325px] rounded-[300px] overflow-hidden'>
+              <Image
+                src='/price-2.webp'
+                alt='Consultation participant'
+                fill
+                className='object-cover'
+                priority
+              />
+              <div className='absolute inset-0 bg-orange opacity-5'></div>
+            </div>
+            <div className='relative w-[245px] h-[480px] rounded-[300px] overflow-hidden'>
+              <Image
+                src='/price-1.webp'
+                alt='Medical consultation scene'
+                fill
+                className='object-cover object-center'
+                style={{ objectPosition: "58% 55%;" }}
+                priority
+              />
+              <div className='absolute inset-0 bg-orange opacity-5'></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

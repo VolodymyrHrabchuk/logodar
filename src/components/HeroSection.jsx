@@ -35,7 +35,7 @@ export default function HeroSection() {
   }, [isModalOpen]);
 
   return (
-    <section className='relative w-full overflow-hidden z-0'>
+    <div className='relative w-full overflow-hidden z-0'>
       <div className='mx-auto max-w-[1400px] px-4 py-6 md:py-20'>
         <div className='flex flex-col-reverse items-center justify-between md:gap-20 lg:flex-row lg:items-start'>
           {/* Text Content */}
@@ -143,6 +143,6 @@ export default function HeroSection() {
           педагогів, викладачів вокалу та сценічної мови
         </p>
       </HeroPopup>
-    </section>
+    </div>
   );
 }

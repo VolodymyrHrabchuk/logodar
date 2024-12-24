@@ -117,7 +117,7 @@ export default function BlogCarousel() {
   }, [carouselApi]);
 
   return (
-    <section className='max-w-[1400px] w-full mx-auto px-4 mt-24 md:mt-[12.5rem]'>
+    <div className='max-w-[1400px] w-full mx-auto px-4 mt-24 md:mt-[12.5rem]' >
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 px-4'>
         {/* Left Section */}
         <div className='space-y-5 md:space-y-6'>
@@ -269,6 +269,6 @@ export default function BlogCarousel() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

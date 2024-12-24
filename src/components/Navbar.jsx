@@ -2,12 +2,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
 import { useState } from "react";
 import ConsultationForm from "./FormPopup";
+import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({
+  scrollToBlog,
+  scrollToConsultation,
+  scrollToSpecialists,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,15 +33,24 @@ export default function Navbar() {
 
       {/* Navigation Links - Visible on screens >= tablet */}
       <div className='hidden md:flex space-x-6 lg:space-x-14 text-grey'>
-        <Link href='/pages' className='hover:underline'>
+        <button
+          onClick={scrollToBlog}
+          className='hover:underline cursor-pointer'
+        >
           Блог
-        </Link>
-        <Link href='/services' className='hover:underline'>
+        </button>
+        <button
+          onClick={scrollToConsultation}
+          className='hover:underline cursor-pointer'
+        >
           Консультації
-        </Link>
-        <Link href='/blog' className='hover:underline'>
+        </button>
+        <button
+          onClick={scrollToSpecialists}
+          className='hover:underline cursor-pointer'
+        >
           Каталог спеціалістів
-        </Link>
+        </button>
       </div>
 
       {/* Action Buttons */}

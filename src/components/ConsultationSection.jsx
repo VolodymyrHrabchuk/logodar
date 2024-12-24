@@ -3,17 +3,31 @@ import { ReusableButton } from "./ui/ReusableButton";
 
 export default function ConsultationSection() {
   return (
-    <section className='relative w-full overflow-hidden'>
+    <div className='relative w-full overflow-hidden'>
       <div className='mx-auto max-w-[1400px] px-4 py-16 md:pt-0 md:pb-16'>
         <div className='flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between'>
-          <div className='hidden md:block relative w-full h-[500px] lg:h-[600px]'>
-            <Image
-              src='/consult.png'
-              alt='Professional consultant'
-              fill
-              className='object-contain'
-              priority
-            />
+          <div className='hidden md:flex relative w-full h-[500px]  items-end  gap-10'>
+            <div className='relative w-[275px] h-[520px] rounded-[300px] overflow-hidden'>
+              <Image
+                src='/consult-1.webp'
+                alt='Medical consultation scene'
+                fill
+                className='object-cover'
+                priority
+              />
+              <div className='absolute inset-0 bg-orange opacity-5'></div>
+            </div>
+
+            <div className='relative w-[220px] h-[365px] rounded-[300px] overflow-hidden'>
+              <Image
+                src='/consult-2.webp'
+                alt='Consultation participant'
+                fill
+                className='object-cover'
+                priority
+              />
+              <div className='absolute inset-0 bg-orange opacity-5'></div>
+            </div>
           </div>
 
           {/* Content */}
@@ -31,7 +45,7 @@ export default function ConsultationSection() {
             </h2>
 
             <div className='text-grey font-roboto text-sm md:text-base'>
-              <ul className="list-disc pl-4">
+              <ul className='list-disc pl-4'>
                 <li>Консультування (супервізії для логопедів, психологів)</li>
                 <li>
                   Консультування пацієнтів з питань відновлення мови та
@@ -59,6 +73,6 @@ export default function ConsultationSection() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -49,7 +49,7 @@ const SubscribeSection = () => {
   };
 
   return (
-    <section className='hidden md:block max-w-[1400px] w-full mx-auto px-4 my-32'>
+    <div className='hidden md:block max-w-[1400px] w-full mx-auto px-4 my-32'>
       <div className='flex items-center justify-between'>
         <h2 className='text-[2.5rem] leading-tight text-black mb-6 font-lora w-1/2'>
           Отримуйте новини просто <br />
@@ -94,7 +94,7 @@ const SubscribeSection = () => {
       {status && (
         <p className='text-center text-md text-green-600 mt-4'>{status}</p>
       )}
-    </section>
+    </div>
   );
 };
 
