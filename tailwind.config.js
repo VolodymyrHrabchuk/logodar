@@ -14,7 +14,7 @@ module.exports = {
         orange: "#F95822",
         grey: "#525252",
         circle: "rgba(249, 88, 34, 0.1)",
-        background: "hsl(var(--background))",
+        background: "#EBEBEB",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",

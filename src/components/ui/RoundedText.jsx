@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-export default function Component() {
+export default function CircularText({ onClick }) {
   const canvasRef = useRef(null);
-  const rotationRef = useRef(0); // Holds the current rotation angle
-  const animationRef = useRef(null); // Holds the animation frame ID
+  const rotationRef = useRef(0);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -14,91 +14,89 @@ export default function Component() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Define canvas size
-    const size = 300; // Consider reducing if not necessary
+    const size = 300;
     canvas.width = size;
     canvas.height = size;
 
-    // Clear the canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // **Ensure the Inter font is loaded before drawing**
     const loadAndDraw = async () => {
       try {
-        // Define font sizes
-        const mainFontSize = 20; // Increased font size for main text
-        const separatorFontSize = mainFontSize * 2; // Double the main font size
-
-        // Preload the font at the maximum required size to prevent reflows
+        const fontSize = 20;
+        const separatorFontSize = fontSize * 1.5;
+        await document.fonts.load(`400 ${fontSize}px 'Inter'`);
         await document.fonts.load(`400 ${separatorFontSize}px 'Inter'`);
-        await document.fonts.load(`400 ${mainFontSize}px 'Inter'`);
+        await document.fonts.load(`400 ${fontSize}px 'Inter'`);
 
-        // Set initial text properties
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillStyle = "black";
 
-        const text = "BEST SERVICES";
+        const text1 = "Натисни і отримай";
+        const text2 = "Передбачення";
+        const separator = "•";
         const radius = 120;
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
 
-        // Prepare the repeated text with separators
-        const repetition = 2; // Number of repetitions
-        const separator = "•"; // Single separator without spaces
-        const repeatedText =
-          Array(repetition).fill(text).join(` ${separator} `) +
-          ` ${separator} `;
-        const characters = repeatedText.split("");
-
-        const totalAngle = Math.PI * 2; // Full circle
-        const angleStep = totalAngle / characters.length;
-
-        // Function to draw the circular text with a given rotation
         const drawCircularText = (rotation) => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear before each draw
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          characters.forEach((char, i) => {
-            // Determine if the current character is a separator
-            const isSeparator = char === "•";
+          // Draw "Натисни і отримай"
+          ctx.font = `${fontSize}px 'Inter', sans-serif`;
+          const text1WithSeparator = `${text1} ${separator} `;
+          const chars1 = text1WithSeparator.split("");
+          const angleStep1 = Math.PI / chars1.length;
 
-            // Set font size based on character type
-            ctx.font = isSeparator
-              ? `${separatorFontSize}px 'Inter', sans-serif`
-              : `${mainFontSize}px 'Inter', sans-serif`;
-
-            // Calculate the angle for the current character with rotation
-            const charAngle = -Math.PI / 2 + i * angleStep + rotation; // Start from the top and add rotation
-
+          chars1.forEach((char, i) => {
+            const charAngle = Math.PI + i * angleStep1 + rotation;
             const x = centerX + Math.cos(charAngle) * radius;
             const y = centerY + Math.sin(charAngle) * radius;
 
             ctx.save();
             ctx.translate(x, y);
-            ctx.rotate(charAngle + Math.PI / 2); // Rotate to align with the circle
+            ctx.rotate(charAngle + Math.PI / 2);
+            if (char === separator) {
+              ctx.font = `${separatorFontSize}px 'Inter', sans-serif`;
+            }
+            ctx.fillText(char, 0, 0);
+            ctx.restore();
+          });
+
+          // Draw "ПЕРЕДБАЧЕННЯ"
+          ctx.font = `400 ${fontSize}px 'Inter', sans-serif`;
+          const text2WithSeparator = `${text2} ${separator} `;
+          const chars2 = text2WithSeparator.split("");
+          const angleStep2 = Math.PI / chars2.length;
+
+          chars2.forEach((char, i) => {
+            const charAngle = i * angleStep2 + rotation;
+            const x = centerX + Math.cos(charAngle) * radius;
+            const y = centerY + Math.sin(charAngle) * radius;
+
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(charAngle + Math.PI / 2);
+            if (char === separator) {
+              ctx.font = `${separatorFontSize}px 'Inter', sans-serif`;
+            }
             ctx.fillText(char, 0, 0);
             ctx.restore();
           });
         };
 
-        // Animation loop function
         const animate = () => {
-          rotationRef.current += 0.01; // Adjust rotation speed here
+          rotationRef.current += 0.01;
           drawCircularText(rotationRef.current);
           animationRef.current = requestAnimationFrame(animate);
         };
 
-        // Start the animation
         animate();
       } catch (error) {
         console.error("Error loading fonts:", error);
-        // Optionally, implement fallback mechanisms here
       }
     };
 
     loadAndDraw();
 
-    // Cleanup on unmount
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
@@ -107,7 +105,10 @@ export default function Component() {
   }, []);
 
   return (
-    <div className='relative w-[110px] h-[110px] sm:w-[180px] sm:h-[180px] rounded-full border-2 border-black flex items-center justify-center bg-white/30 backdrop-blur-md'>
+    <div
+      className='relative w-[110px] h-[110px] sm:w-[180px] sm:h-[180px] rounded-full border-2 border-black flex items-center justify-center bg-white/30 backdrop-blur-md cursor-pointer'
+      onClick={onClick}
+    >
       <canvas ref={canvasRef} className='absolute w-full h-full' />
     </div>
   );

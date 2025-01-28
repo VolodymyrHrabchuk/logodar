@@ -4,7 +4,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
+  TelegramIcon,
 } from "@/components/ui/Icons";
 
 import SocialButton from "@/components/ui/ReusableButton"; // Use ES6 import
@@ -16,9 +16,9 @@ const socialMediaData = [
     url: "https://www.facebook.com", // Replace with actual URLs
   },
   {
-    name: "Twitter",
-    icon: TwitterIcon,
-    url: "https://www.twitter.com",
+    name: "Telegram",
+    icon: TelegramIcon,
+    url: "https://t.me/c/2271131268/369",
   },
   {
     name: "Instagram",

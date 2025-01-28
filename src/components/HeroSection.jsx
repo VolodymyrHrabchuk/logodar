@@ -6,23 +6,25 @@ import { ReusableButton } from "./ui/ReusableButton";
 import RoundedText from "./ui/RoundedText";
 import HeroPopup from "./HeroPopup";
 import { useState, useEffect } from "react";
+import RandomPhrasePopup from "./RandomPhrasePopup"; // Ensure correct path
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPhraseModalOpen, setIsPhraseModalOpen] = useState(false);
 
-  // Function to open the modal
+  // Function to open the Hero modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Function to close the modal
+  // Function to close the Hero modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
-  // Prevent background scrolling when modal is open
+  // Prevent background scrolling when any modal is open
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen || isPhraseModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -32,7 +34,7 @@ export default function HeroSection() {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, isPhraseModalOpen]);
 
   return (
     <div className='relative w-full overflow-hidden z-0'>
@@ -94,7 +96,7 @@ export default function HeroSection() {
 
             {/* Decorative Elements */}
             <div className='absolute -bottom-6 -left-1 md:bottom-[-5rem] md:left-[-5rem]'>
-              <RoundedText />
+              <RoundedText onClick={() => setIsPhraseModalOpen(true)} />
             </div>
 
             <div className='absolute md:left-[-118px] right-7 top-7 md:top-56 h-[64px] w-[92px] md:h-[144px] md:w-[191px] lg:block '>
@@ -109,7 +111,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Modal Implementation */}
+      {/* Hero Modal */}
       <HeroPopup isOpen={isModalOpen} onClose={handleCloseModal}>
         <h2 className='text-2xl md:text-3xl lg:text-4xl font-regular font-lora mb-4 text-center text-white'>
           Вітаємо Вас на платформі
@@ -143,6 +145,12 @@ export default function HeroSection() {
           педагогів, викладачів вокалу та сценічної мови
         </p>
       </HeroPopup>
+
+      {/* Random Phrase Modal */}
+      <RandomPhrasePopup
+        isOpen={isPhraseModalOpen}
+        onClose={() => setIsPhraseModalOpen(false)}
+      />
     </div>
   );
 }
