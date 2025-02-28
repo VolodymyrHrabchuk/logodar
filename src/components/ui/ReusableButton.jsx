@@ -1,10 +1,21 @@
 import React from "react";
 import Link from "next/link";
-export const ReusableButton = ({ text, onClick }) => {
+export const ReusableButton = ({
+  text,
+  onClick,
+  disabled = false,
+  className,
+}) => {
   return (
     <button
       onClick={onClick}
-      className='bg-black text-white py-3 px-12 md:px-10 rounded-full hover:bg-gray-700 transition font-roboto font-normal text-sm md:text-base'
+      disabled={disabled}
+      className={`${className} py-3 px-12 md:px-10 rounded-full transition font-roboto font-normal text-sm md:text-base 
+        ${
+          disabled
+            ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+            : "bg-black text-white hover:bg-gray-700"
+        }`}
     >
       {text}
     </button>

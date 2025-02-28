@@ -9,6 +9,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 import TreatmentSection from "@/components/TreatmentSection";
 import ExpertsCarousel from "@/components/ExpertsCarousel";
 import TestimonialCarousel from "@/components/Testimonials";
+import CalendarEvents from "@/components/Calendar";
 
 export default function Home() {
   const blogRef = useRef(null);
@@ -39,7 +40,7 @@ export default function Home() {
         <HeroSection />
       </section>
 
-      <section ref={blogRef} className="scroll-mt-[30px]">
+      <section ref={blogRef} className='scroll-mt-[30px]'>
         <BlogCarousel />
       </section>
 
@@ -47,15 +48,16 @@ export default function Home() {
         <SubscribeSection />
       </section>
 
-      <section ref={consultationRef} className="scroll-mt-[30px]">
+      <section ref={consultationRef} className='scroll-mt-[30px]'>
         <ConsultationSection />
       </section>
 
       <section>
         <TreatmentSection />
       </section>
+      <CalendarEvents />
 
-      <section ref={specialistsRef} className="scroll-mt-[30px]">
+      <section ref={specialistsRef} className='scroll-mt-[30px]'>
         <ExpertsCarousel />
       </section>
 
