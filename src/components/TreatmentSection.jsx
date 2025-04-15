@@ -17,7 +17,7 @@ export default function TreatmentSection() {
   ];
 
   return (
-    <div className='w-full py-12  md:py-16' id="consultation">
+    <div className='w-full py-12  md:py-16' id='consultation'>
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between'>
           {/* Text Content with Treatment List */}
@@ -70,6 +70,7 @@ export default function TreatmentSection() {
                 src='/price-2.webp'
                 alt='Consultation participant'
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover'
                 priority
               />
@@ -80,6 +81,7 @@ export default function TreatmentSection() {
                 src='/price-1.webp'
                 alt='Medical consultation scene'
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover object-center'
                 style={{ objectPosition: "58% 55%;" }}
                 priority

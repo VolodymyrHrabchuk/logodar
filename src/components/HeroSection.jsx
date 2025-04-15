@@ -89,6 +89,7 @@ export default function HeroSection() {
                 src='/hero.jpg'
                 alt='Professional portrait'
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover rounded-t-full'
                 priority
               />
@@ -104,6 +105,7 @@ export default function HeroSection() {
                 src='/elements.png'
                 alt=''
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-contain'
               />
             </div>

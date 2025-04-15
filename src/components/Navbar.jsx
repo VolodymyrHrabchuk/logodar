@@ -1,30 +1,39 @@
-// components/Navbar.jsx
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import ConsultationForm from "./FormPopup";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({
   scrollToBlog,
   scrollToConsultation,
   scrollToSpecialists,
+  isSpecialistsPage = false,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleSpecialistsClick = () => {
+    if (isSpecialistsPage) {
+      // Already on specialists page, maybe scroll to top or do nothing
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (scrollToSpecialists) {
+      // On homepage with scroll function available
+      scrollToSpecialists();
+    } else {
+      // Navigate to specialists page
+      router.push("/specialists");
+    }
+  };
 
   return (
     <nav className='relative z-10 py-4 px-4 md:px-6 2xl:px-20 flex items-center justify-between'>
       {/* Logo */}
       <div className='text-orange font-bold text-2xl flex items-center gap-2'>
-        <Link href='/' className='flex items-center'>
-          <Image
-            src='/logo.svg'
-            alt='Logo'
-            width={40}
-            height={40}
-            className='h-14 w-14'
-          />
+        <Link href='/' className='flex items-center relative w-14 h-14'>
+          <Image src='/logo.svg' alt='Logo' fill className='object-contain' />
         </Link>
         <p className='hidden md:block text-grey font-roboto text-base font-normal '>
           «Памятайте – мовлення важливе!» Т.Ярмак
@@ -33,21 +42,40 @@ export default function Navbar({
 
       {/* Navigation Links - Visible on screens >= tablet */}
       <div className='hidden md:flex space-x-6 lg:space-x-14 text-grey'>
+        {scrollToBlog ? (
+          <button
+            onClick={scrollToBlog}
+            className='hover:underline cursor-pointer'
+          >
+            Блог
+          </button>
+        ) : (
+          <Link href='/#blog' className='hover:underline cursor-pointer'>
+            Блог
+          </Link>
+        )}
+
+        {scrollToConsultation ? (
+          <button
+            onClick={scrollToConsultation}
+            className='hover:underline cursor-pointer'
+          >
+            Консультації
+          </button>
+        ) : (
+          <Link
+            href='/#consultation'
+            className='hover:underline cursor-pointer'
+          >
+            Консультації
+          </Link>
+        )}
+
         <button
-          onClick={scrollToBlog}
-          className='hover:underline cursor-pointer'
-        >
-          Блог
-        </button>
-        <button
-          onClick={scrollToConsultation}
-          className='hover:underline cursor-pointer'
-        >
-          Консультації
-        </button>
-        <button
-          onClick={scrollToSpecialists}
-          className='hover:underline cursor-pointer'
+          onClick={handleSpecialistsClick}
+          className={`hover:underline cursor-pointer ${
+            isSpecialistsPage ? "font-semibold text-black" : ""
+          }`}
         >
           Каталог спеціалістів
         </button>

@@ -12,6 +12,7 @@ export default function ConsultationSection() {
                 src='/consult-1.webp'
                 alt='Medical consultation scene'
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover'
                 priority
               />
@@ -23,6 +24,7 @@ export default function ConsultationSection() {
                 src='/consult-2.webp'
                 alt='Consultation participant'
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover'
                 priority
               />

@@ -168,7 +168,7 @@ export default function BlogCarousel() {
                           width={600}
                           height={400}
                         />
-                        <Badge className='absolute top-4 left-4 bg-black text-white hover:bg-black/80 px-6 py-1.5 rounded-full text-xs font-inter'>
+                        <Badge className='absolute top-4 left-4 bg-orange text-white hover:bg-black/80 px-6 py-1.5 rounded-full text-xs font-inter'>
                           {post.tag}
                         </Badge>
                       </div>

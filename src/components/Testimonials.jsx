@@ -142,8 +142,8 @@ export default function TestimonialCarousel() {
                       <Image
                         src={testimonial.image}
                         alt={testimonial.author}
-                        layout='fill' // Makes the image fill the parent container
-                        objectFit='cover' // Ensures the image covers the container without distortion
+                        fill // ✅ New way to make the image fill the container
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' // ✅ Helps optimize image loading
                         className='object-cover'
                       />
                     </div>

@@ -14,8 +14,8 @@ export default function Footer() {
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
           {/* Company Info */}
           <div className='space-y-6'>
-            <Link href='/' className='hidden md:inline-block'>
-              <Image src={"/logo.svg"} alt='Logo' width={70} height={70} />
+            <Link href='/' className='hidden md:inline-block relative w-14 h-14'>
+              <Image src='/logo.svg' alt='Logo' fill className='object-contain' />
             </Link>
             <p className='hidden md:block text-grey font-roboto text-base '>
               «Памятайте – мовлення важливе!» Т.Ярмак
