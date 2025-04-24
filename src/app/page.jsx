@@ -16,7 +16,7 @@ import WebinarSection from "@/components/WebinarSection";
 export default function Home() {
   const blogRef = useRef(null);
   const consultationRef = useRef(null);
-  const specialistsRef = useRef(null);
+  const heroRef = useRef(null);
 
   const scrollToBlog = () => {
     blogRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -30,9 +30,10 @@ export default function Home() {
       <Navbar
         scrollToBlog={scrollToBlog}
         scrollToConsultation={scrollToConsultation}
+        heroRef={heroRef}
       />
 
-      <section>
+      <section ref={heroRef}>
         <HeroSection />
       </section>
 
@@ -40,7 +41,7 @@ export default function Home() {
         <BlogCarousel />
       </section>
 
-      <section className="mt-16">
+      <section className='mt-16'>
         <WebinarSection />
       </section>
 

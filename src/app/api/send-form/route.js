@@ -1,56 +1,45 @@
-// pages/api/submit-form.js
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request) {
+  if (request.method !== "POST") {
+    return NextResponse.json({ error: "Method not allowed" }, { status: 405 });
   }
 
-  const { fullName, contact, message } = req.body;
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
 
-  // Basic server-side validation
+  const { fullName, contact, message } = body;
   if (!fullName || !contact || !message) {
-    return res.status(400).json({ message: "Missing required fields" });
+    return NextResponse.json(
+      { error: "Missing required fields" },
+      { status: 400 }
+    );
   }
 
   try {
-    // Here you would typically:
-    // 1. Send email via Resend API
-    // 2. Save to database
-    // 3. Perform any other necessary processing
-
-    // Example email sending (you'd replace with actual Resend API call)
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "LOGODAR <onboarding@resend.dev>",
-        to: "logodar2020@gmail.com",
-        subject: "Нова контактна форма з сайту",
-        html: `
-          <h1>Нова контактна форма</h1>
-          <p><strong>Ім'я:</strong> ${fullName}</p>
+    await resend.emails.send({
+      from: "LOGODAR <onboarding@resend.dev>",
+      to: process.env.EMAIL_TO,
+      subject: `Нова контактна форма з сайту LOGODAR `,
+      text: `Name: ${fullName}\nContact: ${contact}\n\n${message}`,
+      html: `<h1>Нова контактна форма</h1>
+      <p><strong>Ім'я:</strong> ${fullName}</p>
           <p><strong>Контакти:</strong> ${contact}</p>
-          <p><strong>ПовідомленняMessage:</strong> ${message}</p>
-        `,
-      }),
+          <p><strong>Повідомлення:</strong> ${message}</p>`,
     });
-
-    if (!response.ok) {
-      throw new Error("Failed to send email");
-    }
-
-    return res
-      .status(200)
-      .json({ success: true, message: "Form submitted successfully" });
-  } catch (error) {
-    console.error("Submission error:", error);
-    return res.status(500).json({
-      success: false,
-      message: "Failed to process submission",
-    });
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Resend error:", err);
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
+    );
   }
 }

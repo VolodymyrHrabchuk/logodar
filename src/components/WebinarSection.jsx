@@ -229,7 +229,7 @@ export default function WebinarSection() {
           </div>
         </div>
 
-        <div className='space-y-6'>
+        <div className='space-y-6 '>
           <div className='relative'>
             <span className='text-base text-black font-lora'>
               Платні онлайн вебінари
@@ -246,10 +246,15 @@ export default function WebinarSection() {
             знаннями та досвідом.
           </p>
 
-          <div className='mt-8'>
+          <div className='mt-8 flex justify-center lg:justify-start'>
             <ReusableButton
               text='Переглянути вебінари'
-              onClick={() => (window.location.href = "/")}
+              onClick={() => {
+                window.open(
+                  "https://www.youtube.com/@%D0%A2%D0%B5%D1%82%D1%8F%D0%BD%D0%B0%D0%AF%D0%A0%D0%9C%D0%90%D0%9A_%D0%92/videos",
+                  "_blank"
+                );
+              }}
             />
           </div>
         </div>

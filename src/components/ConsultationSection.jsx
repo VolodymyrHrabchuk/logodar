@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import { ReusableButton } from "./ui/ReusableButton";
 
+import { useRouter } from "next/navigation";
 export default function ConsultationSection() {
+  const router = useRouter();
+
   return (
     <div className='relative w-full overflow-hidden'>
       <div className='mx-auto max-w-[1400px] px-4 py-16 md:pt-0 md:pb-16'>
         <div className='flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between'>
-          <div className='hidden md:flex relative w-full h-[500px]  items-end  gap-10'>
+          <div className='hidden md:flex relative w-full h-[500px] items-end gap-10'>
             <div className='relative w-[275px] h-[520px] rounded-[300px] overflow-hidden'>
               <Image
                 src='/consult-1.webp'
@@ -69,8 +74,11 @@ export default function ConsultationSection() {
               </ul>
             </div>
 
-            <div className='mt-8'>
-              <ReusableButton text='Детальніше' />
+            <div className='mt-8 flex justify-center lg:justify-start'>
+              <ReusableButton
+                text='Детальніше'
+                onClick={() => router.push("/specialists")}
+              />
             </div>
           </div>
         </div>

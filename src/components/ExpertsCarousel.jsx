@@ -80,14 +80,24 @@ export default function ExpertsCarousel() {
   const [carouselApi, setCarouselApi] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  // обновляем selectedIndex при любой прокрутке
   useEffect(() => {
-    if (carouselApi) {
-      const updateSelected = () =>
-        setSelectedIndex(carouselApi.selectedScrollSnap());
-      carouselApi.on("select", updateSelected);
-      setSelectedIndex(carouselApi.selectedScrollSnap());
-      return () => carouselApi.off("select", updateSelected);
-    }
+    if (!carouselApi) return;
+    const onSelect = () => setSelectedIndex(carouselApi.selectedScrollSnap());
+    carouselApi.on("select", onSelect);
+    setSelectedIndex(carouselApi.selectedScrollSnap());
+    return () => {
+      carouselApi.off("select", onSelect);
+    };
+  }, [carouselApi]);
+
+  // автопрокрутка по одной карточке каждые 8 секунд
+  useEffect(() => {
+    if (!carouselApi) return;
+    const id = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 8000);
+    return () => clearInterval(id);
   }, [carouselApi]);
 
   return (
@@ -137,14 +147,13 @@ export default function ExpertsCarousel() {
                     />
                   </div>
                   <div className='flex flex-col flex-grow items-center justify-center'>
-                    <h3 className='text-base font-inter mb-2  max-w-52 w-full mx-auto text-center'>
+                    <h3 className='text-base font-inter mb-2 max-w-52 w-full mx-auto text-center'>
                       {expert.name}
                     </h3>
                     <p className='text-grey text-base font-inter mb-5 text-center'>
                       {expert.title}
                     </p>
                   </div>
-                  {/* <SocialButtons className='justify-center gap-2 mt-auto' /> */}
                   <SocialButton
                     icon={webIcon}
                     key={expert.id}

@@ -9,7 +9,7 @@ export default function TreatmentSection() {
       price: "5000 грн",
     },
     {
-      name: "Індивідуальна консультація для учасників бойових дій",
+      name: "Перша індивідуальна консультація для учасників бойових дій",
       price: "Безкоштовно",
     },
     { name: "Вебінар", price: "500 грн" },
@@ -29,8 +29,12 @@ export default function TreatmentSection() {
             <div className='grid gap-12'>
               <div className='space-y-8'>
                 <div className='flex justify-between'>
-                  <h3 className='font-roboto text-sm md:text-base'>Послуга</h3>
-                  <h3 className='font-roboto text-sm md:text-base'>Ціна від</h3>
+                  <h3 className='font-roboto text-sm md:text-base w-2/3'>
+                    Послуга
+                  </h3>
+                  <h3 className='font-roboto text-sm md:text-base w-1/3 text-right'>
+                    Ціна від
+                  </h3>
                 </div>
 
                 <div className='space-y-6'>
@@ -43,7 +47,7 @@ export default function TreatmentSection() {
                         key={index}
                         className='flex items-center justify-between py-2 w-full'
                       >
-                        <span className='text-sm md:text-base text-grey'>
+                        <span className='text-sm md:text-base text-grey w-1/3'>
                           {treatment.name}
                         </span>
                         <div className='flex-grow border-b border-dotted border-gray-300 mx-4' />
@@ -57,9 +61,9 @@ export default function TreatmentSection() {
               </div>
             </div>
 
-            <div className=''>
+            {/* <div className=''>
               <ReusableButton text='Детальніше' />
-            </div>
+            </div> */}
           </div>
 
           {/* Image Section */}

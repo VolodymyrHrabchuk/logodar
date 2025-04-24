@@ -173,7 +173,7 @@ export default function BlogCarousel() {
                         </Badge>
                       </div>
                       {/* Content Section */}
-                      <div className='mt-6 space-y-4 px-0 md:px-4 flex-grow flex flex-col justify-between'>
+                      <div className='mt-6 space-y-4 px-0 md:px-4 flex-grow flex flex-col justify-between items-center'>
                         <div>
                           <h2 className='text-xl md:text-2xl text-black font-lora '>
                             {post.title}

@@ -5,30 +5,37 @@ import {
   InstagramIcon,
   LinkedInIcon,
   TelegramIcon,
+  WhatsApp,
+  YouTube,
 } from "@/components/ui/Icons";
 
-import SocialButton from "@/components/ui/ReusableButton"; // Use ES6 import
+import SocialButton from "@/components/ui/ReusableButton";
 
 const socialMediaData = [
   {
     name: "Facebook",
     icon: FacebookIcon,
-    url: "https://www.facebook.com", // Replace with actual URLs
+    url: "https://www.facebook.com/TatyanaYarmakLOGODAR/",
   },
   {
     name: "Telegram",
     icon: TelegramIcon,
-    url: "https://t.me/c/2271131268/369",
+    url: "https://t.me/KMDSY",
   },
   {
     name: "Instagram",
     icon: InstagramIcon,
-    url: "https://www.instagram.com",
+    url: "https://www.instagram.com/logoped_tatyana_yarmak",
   },
   {
-    name: "LinkedIn",
-    icon: LinkedInIcon,
-    url: "https://www.linkedin.com",
+    name: "WhatsApp",
+    icon: WhatsApp,
+    url: "https://wa.me/380666144424",
+  },
+  {
+    name: "Youtube",
+    icon: YouTube,
+    url: "https://www.youtube.com/@ТетянаЯРМАК_В",
   },
 ];
 
